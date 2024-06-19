@@ -15,9 +15,9 @@ class Game:
         self.collision_sprites = pygame.sprite.Group()
 
 
-        idle_frames = self.load_frames("..\Pygame Project\graphics\Character\Idle\Idle.gif")
-        walk_frames = self.load_frames("..\Pygame Project\graphics\Character\Run\Run.gif")
-        jump_frames = self.load_frames("..\Pygame Project\graphics\Character\Jumlp-All\Jump-All-Sheet.png", 64, 64)
+        idle_frames = self.load_frames("..\Pygame-Project\graphics\Character\Idle\Idle.gif")
+        walk_frames = self.load_frames("..\Pygame-Project\graphics\Character\Run\Run.gif")
+        jump_frames = self.load_frames("..\Pygame-Project\graphics\Character\Jumlp-All\Jump-All-Sheet.png", 64, 64)
 
         self.animations = {
             'idle': idle_frames,
