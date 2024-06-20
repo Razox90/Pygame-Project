@@ -84,13 +84,13 @@ class Player(pygame.sprite.Sprite):
                 #self.rect.bottomleft >= collision_sprite
                 
 
-        if self.rect.bottom > 600:
-            self.rect.bottom = 600
-            self.speed_y = 0
+        #if self.rect.bottom > 600:
+            #self.rect.bottom = 600
+            #self.speed_y = 0
 
-        if self.rect.bottom < 100:
-            self.rect.bottom = 100
-            self.speed_y = 0
+        #if self.rect.bottom < 100:
+            #self.rect.bottom = 100
+            #self.speed_y = 0
 
         # Update animation
         self.animation_counter += 1

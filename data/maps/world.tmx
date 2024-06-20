@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="80" height="45" tilewidth="16" tileheight="16" infinite="0" nextlayerid="10" nextobjectid="17">
- <tileset firstgid="1" source="../tilesets/world - grass.tsx"/>
+ <tileset firstgid="1" source="../../../../../OneDrive/文档/Pygame Project/data/tilesets/world - grass.tsx"/>
  <layer id="1" name="Terrain" width="80" height="45">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -101,7 +101,7 @@
  </layer>
  <objectgroup id="6" name="Collisions">
   <object id="14" x="16" y="544" width="240" height="16"/>
-  <object id="15" x="256" y="480" width="16" height="64" rotation="359.993"/>
-  <object id="16" x="0" y="480" width="16" height="64"/>
+  <object id="15" x="255.954" y="104.001" width="16" height="439.999" rotation="359.993"/>
+  <object id="16" x="0" y="135" width="16" height="409"/>
  </objectgroup>
 </map>
