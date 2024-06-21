@@ -26,12 +26,18 @@
                 "y": 469.5
             }
         },
+        "C:/Users/billy/source/repos/Pygame-Project/data/tilesets/Props-Rocks.tsx": {
+            "dynamicWrapping": false
+        },
+        "C:/Users/billy/source/repos/Pygame-Project/data/tilesets/test.tsx": {
+            "dynamicWrapping": true
+        },
         "E:/Pygame Project/data/tilesets/world2.tsx": {
             "scaleInDock": 1
         }
     },
     "last.externalTilesetPath": "E:/Pygame Project/data/tilesets",
-    "last.imagePath": "E:/Pygame Project/graphics/Assets",
+    "last.imagePath": "C:/Users/billy/source/repos/Pygame-Project/graphics/Background",
     "map.lastUsedFormat": "tmx",
     "openFiles": [
         "C:/Users/billy/source/repos/Pygame-Project/data/maps/world.tmx"
@@ -45,5 +51,6 @@
     "tileset.tileSize": {
         "height": 16,
         "width": 16
-    }
+    },
+    "tileset.type": 1
 }

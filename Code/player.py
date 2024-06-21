@@ -59,6 +59,7 @@ class Player(pygame.sprite.Sprite):
         self.animation_counter = 0
         self.direction = 'right'  # Initial direction (can be 'left' or 'right')
         self.jumping = False
+        self.jumping_score = 0
         self.collsion_sprites = collision_sprites
 
     def update(self):
@@ -66,19 +67,22 @@ class Player(pygame.sprite.Sprite):
         self.rect.x += self.speed_x
         self.rect.y += self.speed_y
 
-
         for collision_sprite in self.collsion_sprites:
             if self.rect.bottom and self.rect.colliderect(collision_sprite):
                 self.rect.y -= self.speed_y
                 self.speed_y = 0
+                self.jumping = False
+                self.jumping_score = 0
 
             if  self.rect.right and self.rect.colliderect(collision_sprite):
                 self.rect.x -= self.speed_x
                 self.speed_x = 0
+                self.jumping = True
 
             if self.rect.left and self.rect.colliderect(collision_sprite):
                 self.rect.x -= self.speed_x
                 self.speed_x = 0
+                self.jumping = True
             
             #if self.rect.bottomright and self.rect.colliderect(collision_sprite):
                 #self.rect.bottomleft >= collision_sprite
@@ -131,9 +135,8 @@ class Player(pygame.sprite.Sprite):
         self.current_animation = 'idle'
 
     def jump(self):
-        self.jumping = True
-        self.speed_y = -10
-        self.current_animation = 'jump'
-        self.frame_index = 0
-
-        
+        if self.jumping != True:
+            self.jumping = True
+            self.speed_y = -10
+            self.current_animation = 'jump'
+            self.frame_index = 0

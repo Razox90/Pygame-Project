@@ -11,6 +11,7 @@ class Game:
         self.clock = pygame.time.Clock()
         self.done = False
 
+        self.player_sprite = AllSprites()
         self.all_sprites = AllSprites()
         self.collision_sprites = pygame.sprite.Group()
 
@@ -26,7 +27,7 @@ class Game:
         }
         
         self.player = Player(100, 400, self.animations, self.collision_sprites, animation_speed=2)
-        self.all_sprites.add(self.player)
+        self.player_sprite.add(self.player)
 
 
         self.import_assets()
@@ -76,9 +77,21 @@ class Game:
         self.debug('game.py(import_assets): ', self.tmx_maps)
 
     def setup(self, tmx_map, player_start_pos):
-        for layer in ['Terrain', 'Terrain_Top']:
-            for x, y, surf in tmx_map.get_layer_by_name(layer).tiles():
-                Sprite((x * TILE_SIZE, y * TILE_SIZE), surf, self.all_sprites)
+        
+        for obj in tmx_map.get_layer_by_name('Background'):
+            Sprite((obj.x, obj.y), obj.image, self.all_sprites)
+
+        for obj in tmx_map.get_layer_by_name('Background2'):
+            Sprite((obj.x, obj.y), obj.image, self.all_sprites)
+
+        for obj in tmx_map.get_layer_by_name('Background3'):
+            Sprite((obj.x, obj.y), obj.image, self.all_sprites)
+
+        for x, y, surf in tmx_map.get_layer_by_name('Terrain_Bottom').tiles():
+            Sprite((x * TILE_SIZE, y * TILE_SIZE), surf, self.all_sprites)
+
+        for x, y, surf in tmx_map.get_layer_by_name('Terrain').tiles():
+            Sprite((x * TILE_SIZE, y * TILE_SIZE), surf, self.all_sprites)
 
         for obj in tmx_map.get_layer_by_name('Collisions'):
             BorderSprite((obj.x, obj.y), pygame.Surface((obj.width, obj.height)), self.collision_sprites)
@@ -116,11 +129,15 @@ class Game:
 
             self.player.game = self  # Pass the game instance to the player
 
-            self.player.update()
+
             self.all_sprites.update()
+            self.player.update()
+
 
             self.screen.fill((0, 0, 0))
             self.all_sprites.draw(self.screen)
+            self.player_sprite.draw(self.screen)
 
             pygame.display.flip()
-            self.clock.tick(30)
+            self.clock.tick(60)
+            print(pygame.Clock.get_fps(self.clock))
