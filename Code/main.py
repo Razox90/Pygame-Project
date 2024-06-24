@@ -43,21 +43,23 @@ class Main:
         pygame.init()
         self.done = False
         self.screen = pygame.display.set_mode((screen_width, screen_height))
-    
+        
+    # This is the quit function for the quit game button
     def quit_game(self):
         pygame.quit()
         sys.exit()
 
+    # This is the start game function which starts the game whenever the start game button is pressed. 
     def start_game(self):
         from game import Game
         game = Game()
         game.run()
 
-
+    # Possible wip
     def resolution_select(self):
         pass
 
-
+    # This is the possible wip settings screen
     def settings_game(self):
         
         buttons = [
@@ -82,6 +84,7 @@ class Main:
                   
                 pygame.display.flip()
 
+    # This is the Main menu class
     def main_menu(self):
         
         buttons = [
