@@ -16,7 +16,7 @@ class Button:
         self.callback = callback
     
     def draw(self, screen):
-        # This checks whether the mouse is over the button or not.
+        # This checks whether the mouse is over the button or not. #adads
         mouse_pos = pygame.mouse.get_pos()
 
         if self.rect.collidepoint(mouse_pos):
